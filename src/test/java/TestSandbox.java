@@ -16,7 +16,7 @@ public class TestSandbox {
     @Tag("smokeTest")
     @DisplayName("This test is for demo purpose only to show that the basic code works." +
             "You have to use the best practices that you normally use to design your tests")
-    @Test
+    //@Test
     void assertThatHomePageTitleIsCorrect() {
         driver.get(HOME_PAGE_URL);
         assertEquals("Amazon.com. Spend less. Smile more.", driver.getTitle());
