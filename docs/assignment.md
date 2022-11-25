@@ -24,26 +24,26 @@ Web Automation: [Amazon](https://www.amazon.in/)
 
 ## Checklist of what we expect from this assignment ?
 
-- [ ] Completion of the assignment.
-- [ ] Test should run and pass in Chrome browser.
-- [ ] Platform independent. (It should run on Windows, Mac or linux)
-- [ ] Better page layer management.
-- [ ] Helper methods for page interactions like click, sendkeys.
-- [ ] Readable and clean code.
-- [ ] Clear instructions about the framework and how to execute in the readme file.
-- [ ] Commits history to see how you have approached the problem.
-- [ ] Following good design principles.
+- [X] Completion of the assignment.
+- [X] Test should run and pass in Chrome browser.
+- [X] Platform independent. (It should run on Windows, Mac or linux)
+- [X] Better page layer management.
+- [X] Helper methods for page interactions like click, sendkeys.
+- [X] Readable and clean code.
+- [X] Clear instructions about the framework and how to execute in the readme file.
+- [X] Commits history to see how you have approached the problem.
+- [X] Following good design principles.
 
 > Note: Some of these requirements are intentionally kept vague.
 > We want to see "the best" that you normally can deliver than leading you towards one way or another.
 
 ## What can get you closer to the job ?
 
-- [ ] Unit tests if applicable.
-- [ ] Framework having the provision to run the test in local or selenium grid/selenoid.
-- [ ] Dockerizing the framework itself. (Build a docker image for the automated tests)
-- [ ] Good design patterns wherever applicable.
-- [ ] Anything that can help you to impress us.
+- [X] Unit tests if applicable. Not Applicable
+- [X] Framework having the provision to run the test in local or selenium grid/selenoid.
+- [X] Dockerizing the framework itself. (Build a docker image for the automated tests)
+- [X] Good design patterns wherever applicable.
+- [X] Anything that can help you to impress us. Highlighting element before interactions and extent reports
 
 ## Steps
 

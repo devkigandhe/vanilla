@@ -1,5 +1,7 @@
 package amazon.utils;
 
+import static java.lang.Boolean.parseBoolean;
+
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.function.Function;
@@ -11,8 +13,14 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.FluentWait;
 
-public class CommonUtils {
+import com.typesafe.config.Config;
 
+import amazon.config.EnvFactory;
+
+public class CommonUtils {
+	private static Config config = EnvFactory.getInstance().getConfig();
+
+	private static final boolean HEADLESS = parseBoolean(config.getString("HEADLESS"));
 	WebDriver driver;
 
 	public CommonUtils(WebDriver driver) {
@@ -20,8 +28,11 @@ public class CommonUtils {
 	}
 
 	public void highlightAndClick(WebElement element) throws InterruptedException {
-		JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
-		jsExecutor.executeScript("arguments[0].style.border='2px solid red'", element);
+
+		if (HEADLESS == false) {
+			JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
+			jsExecutor.executeScript("arguments[0].style.border='2px solid red'", element);
+		}
 
 		element.click();
 
@@ -45,5 +56,12 @@ public class CommonUtils {
 	public void switchTab(int tabIndex) {
 		ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
 		driver.switchTo().window(tabs.get(tabIndex));
+	}
+
+	public void assertEquals(String expectedString, String actualString) throws Exception {
+
+		if (!expectedString.equals(actualString))
+			throw new Exception(
+					"Assertion Failed: Expected Value = " + expectedString + " and Actual Value = " + actualString);
 	}
 }
